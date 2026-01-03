@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ entry.title }} - Dev Log Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+    <div class="page">
+        <div class="entry-detail">
+            <h1 class="entry-detail__title">{{ entry.title }}</h1>
+
+            <div class="entry-detail__meta">
+                by {{ entry.author.first_name }} {{ entry.author.last_name }}<br>
+                {{ entry.created_at|date:"F d, Y" }}
+            </div>
+            <div class="entry-detail__content">
+                {{ entry.content }}
+            </div>
+
+            <div class="entry-detail__footer">
+                <div class="entry-detail__ornament"><hr></div>
+                <a href="{% url 'home' %}" class="entry-detail__back-link">Return to Entries</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

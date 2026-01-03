@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dev Log Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- Cover Section - Always takes full viewport height -->
+    <div class="cover-section">
+        <!-- Scroll Indicators -->
+        <!-- <div class="scroll-indicator scroll-indicator--left scroll-indicator--bop">↓</div> -->
+        <div class="scroll-indicator scroll-indicator--right scroll-indicator--bop">↓</div>
+        
+        <div class="cover-border">
+            <div class="cover">
+                <h2 class="cover__subtitle">A</h2>
+                <h1 class="cover__title cover__title--bop">Development Logging Book</h1>
+                <h2 class="cover__tagline">on gamecraft, engineering practices, <br /> and other musings</h2>
+                <div class="cover__location cover__ornament">Los Angeles <br /> 2025</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Entries Section -->
+    <div class="entries">
+        <h2 class="entries__title">Entries</h2>
+        <div class="entries__ornament">⸺ ✦✦✦ ⸺</div>
+
+        {% for chapter_title, entries in grouped_entries.items %}
+        <h3 class="entries__chapter-title">{{ chapter_title }}</h3>
+        <div class="entries__list">
+            {% for entry in entries %}
+            <div class="entry">
+                <div class="entry__header">
+                    <h3 class="entry__title">
+                        <a class="entry__link" href="{% url 'entry-detail' entry.pk %}">{{ entry.title }}</a>
+                    </h3>
+                    <div class="entry__page">{{ entry.pk }}</div>
+                </div>
+                <div class="entry__meta">by {{ entry.author.first_name }}</div>
+                <div class="entry__meta">{{ entry.created_at|date:"F d, Y" }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

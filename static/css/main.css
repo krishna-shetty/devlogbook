@@ -1,0 +1,321 @@
+/* Layout and Base */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f0;
+    font-family: 'Baskervville', serif;
+}
+
+.page {
+    background: #f5f5f0;
+    font-family: 'Baskervville', serif;
+}
+
+/* Cover Section - Always takes full viewport height */
+.cover-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #f5f5f0;
+    position: relative;
+}
+
+/* Scroll Indicators */
+.scroll-indicator {
+    position: absolute;
+    top: 80%;
+    font-family: 'Baskervville', serif;
+    font-size: 3.5rem;
+    color: #4a4a4a;
+}
+
+.scroll-indicator--left {
+    left: 5rem;
+    text-orientation: mixed;
+}
+
+.scroll-indicator--right {
+    right: 5rem;
+    text-orientation: mixed;
+}
+
+
+.cover-border {
+    display: inline-block;
+    border: 2px solid #4a4a4a;
+    padding: 4px;
+}
+
+.cover {
+    background: #fcfbf7;
+    border: 2px solid #4a4a4a;
+    padding: 4rem 5rem;
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.cover__title {
+    font-family: 'Baskervville', serif;
+    font-size: 2.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: #DB261D;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.cover__subtitle,
+.cover__tagline {
+    font-family: 'Baskervville', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #4a4a4a;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+    text-transform: uppercase;
+    word-spacing: 2px;
+}
+
+.cover__author {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    margin-top: 2rem;
+    letter-spacing: 3px;
+    font-style: normal;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cover__location {
+    margin-top: 4rem;
+}
+
+.cover__ornament {
+    font-family: 'Baskervvilles', serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #4a4a4a;
+    letter-spacing: 0.1em;
+}
+
+/* Entries Section */
+.entries {
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: #f5f5f0;
+}
+
+.entries__title {
+    font-family: 'Baskervville', serif;
+    font-size: 1.8rem;
+    color: #2f2f2f;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.entries__ornament {
+    text-align: center;
+    font-size: 1rem;
+    margin: 1rem 0;
+    font-family: 'Old Standard TT', serif;
+    color: #4a4a4a;
+    letter-spacing: 0.1em;
+}
+
+.entries__chapter-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2f2f2f;
+}
+
+.entries__list {
+    margin-bottom: 2rem;
+}
+
+/* Entry */
+.entry {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.entry:first-child {
+    margin-top: 2rem;
+}
+
+.entry:last-child{
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.entry__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.entry__title {
+    margin: 0;
+}
+
+.entry__link {
+    color: #2f2f2f;  /* Same red as cover__title */
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;  /* Smooth transition for hover effect */
+}
+
+.entry__link:hover {
+    color: #DB261D;  /* Black on hover */
+}
+
+.entry__page {
+    font-family: 'Old Standard TT', serif;
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+    min-width: 2rem;
+    text-align: right;
+    padding-top: 0.25rem;
+}
+
+.entry__meta {
+    font-family: 'EB Garamond', serif;
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* Entry Detail Section */
+.entry-detail {
+    background: #fcfbf7;
+    border: 2px solid #2f2f2f;
+    padding: 3rem 4rem;
+    max-width: 720px;
+    width: 100%;
+    position: relative; 
+    margin: 2rem auto;
+}
+
+.entry-detail::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    border: 2px solid #2f2f2f;
+    pointer-events: none;
+}
+
+.entry-detail__title {
+    font-family: 'Baskervville', serif;
+    font-size: 2.5rem;
+    color: #DB261D;  /* Same red as cover__title */
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.entry-detail__meta {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.entry-detail__content {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin: 2rem 0;
+}
+
+.entry-detail__footer {
+    margin-top: 4rem;
+    text-align: center;
+    font-family: 'Old Standard TT', serif;
+    color: #666;
+}
+
+.entry-detail__back-link {
+    display: inline-block;
+    color: #DB261D;
+    text-decoration: none;
+    font-style: italic;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+}
+
+.entry-detail__back-link:hover {
+    color: #4a4a4a;
+}
+
+.entry-detail__ornament {
+    text-align: center;
+    font-size: 1rem;
+    margin: 2rem auto;
+    color: #4a4a4a;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .cover-section {
+        padding: 1rem;
+        height: 100vh;
+    }
+    
+    .cover {
+        padding: 2rem 1.5rem;
+        max-width: calc(100vw - 2rem);
+    }
+
+    .cover__title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .cover__subtitle,
+    .cover__tagline {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .entries {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .scroll-indicator {
+        opacity: 0;
+    }
+}
