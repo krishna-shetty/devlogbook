@@ -1,4 +1,6 @@
 {% load static %}
+{% load content_filters %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,8 +26,10 @@
                 {{ entry.created_at|date:"F d, Y" }}
             </div>
             <div class="entry-detail__content">
-                {{ entry.content }}
+                {{ entry.content|embed_youtube|markdownify }}
             </div>
+
+
 
             <div class="entry-detail__footer">
                 <div class="entry-detail__ornament"><hr></div>
