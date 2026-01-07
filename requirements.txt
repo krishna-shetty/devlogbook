@@ -1,7 +1,11 @@
 asgiref==3.11.0
 django==6.0
+gunicorn==23.0.0
 linkify-it-py==2.0.3
 markdown==3.10
+packaging==25.0
 pymdown-extensions==10.20
+python-dotenv==1.2.1
 sqlparse==0.5.5
 uc-micro-py==1.0.3
+whitenoise==6.11.0

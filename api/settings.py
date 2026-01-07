@@ -16,15 +16,27 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Support env variables from .env file if defined
+import os
+from dotenv import load_dotenv
+env_path = load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv(env_path)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ze0v91)kgor&po-lxs3)a$_&q##%&llh8+gupclct@*=atyi-9'
+# SECRET_KEY = 'django-insecure-ze0v91)kgor&po-lxs3)a$_&q##%&llh8+gupclct@*=atyi-9'
+
+# Support env variables from .env file if defined
+# SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87'
+import os
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = False
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
 
@@ -43,6 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,4 +142,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
