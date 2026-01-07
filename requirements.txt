@@ -2,8 +2,6 @@ asgiref==3.11.0
 django==6.0
 linkify-it-py==2.0.3
 markdown==3.10
-pillow==12.1.0
 pymdown-extensions==10.20
-pyyaml==6.0.3
 sqlparse==0.5.5
 uc-micro-py==1.0.3
