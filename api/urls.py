@@ -23,6 +23,14 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('journal.urls')),
+    re_path(
+    r'^favicon\.ico$',
+    RedirectView.as_view(
+        url='/static/images/16th-Century-letter-K.ico',
+        permanent=True
+    )
+),
+
 ]
 
 if settings.DEBUG:
