@@ -7,6 +7,7 @@ class Entry(models.Model):
         ('nighttongue', 'NightTongue'),
         ('devnotes', 'Dev Notes'),
         ('otherramblings', 'Other Ramblings'),
+        ('primeengine', 'Prime Engine'),
     ]
     title = models.CharField(max_length=200)
     content = models.TextField()
