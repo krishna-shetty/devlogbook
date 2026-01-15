@@ -18,7 +18,7 @@ body {
 
 /* Cover Section - Always takes full viewport height */
 .cover-section {
-    height: 100vh;
+    min-height: 100svh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -27,26 +27,6 @@ body {
     background: #f5f5f0;
     position: relative;
 }
-
-/* Scroll Indicators */
-.scroll-indicator {
-    position: absolute;
-    top: 80%;
-    font-family: 'Baskervville', serif;
-    font-size: 3.5rem;
-    color: #4a4a4a;
-}
-
-.scroll-indicator--left {
-    left: 5rem;
-    text-orientation: mixed;
-}
-
-.scroll-indicator--right {
-    right: 5rem;
-    text-orientation: mixed;
-}
-
 
 .cover-border {
     display: inline-block;
@@ -58,7 +38,7 @@ body {
     background: #fcfbf7;
     border: 2px solid #4a4a4a;
     padding: 4rem 5rem;
-    max-width: 700px;
+    max-width: 720px;
     width: 100%;
     text-align: center;
     position: relative;
@@ -77,7 +57,6 @@ body {
 
 .cover__subtitle,
 .cover__tagline {
-    font-family: 'Baskervville', serif;
     font-size: 1.15rem;
     font-weight: 400;
     color: #4a4a4a;
@@ -104,12 +83,92 @@ body {
 }
 
 .cover__ornament {
-    font-family: 'Baskervvilles', serif;
+    font-family: 'EB Garamond', serif;
     text-transform: uppercase;
     font-size: 1rem;
+    font-weight: 400;
     color: #4a4a4a;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.5em;
 }
+
+/* Scroll Indicators */
+.scroll-indicator {
+    position: absolute;
+    top: 80%;
+    font-weight: 400;
+    font-size: 2.0rem;
+    color: #4a4a4a;   
+    text-orientation: mixed;
+}
+
+.scroll-indicator--left {
+    left: 5rem;
+    text-orientation: mixed;
+}
+
+.scroll-indicator--right {
+    right: 5rem;
+    text-orientation: mixed;
+}
+
+/* About Me Section */
+/* Update these specific sections in your CSS */
+
+.about-me-section {
+    width: 100%;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background: #f5f5f0;    
+}
+
+.about-me {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0rem 2rem;
+    text-align: center;     
+}
+
+.about-me__title {
+    font-size: 1.8rem;
+    color: #2f2f2f;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.about-me__bio {
+    font-family: 'EB Garamond', serif;
+    text-align: justify;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-top: 3.0rem;
+}
+
+.about-me__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    font-family: 'Old Standard TT', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    color: #4a4a4a;
+}
+
+.about-me__link {
+    text-decoration: none;
+    color: #4a4a4a;
+}
+
+.about-me__link:hover {
+    color: #DB261D;
+}
+
 
 /* Entries Section */
 .entries {
@@ -180,7 +239,7 @@ body {
 }
 
 .entry__link {
-    color: #2f2f2f;  /* Same red as cover__title */
+    color: #2f2f2f;  
     text-decoration: none;
     font-size: 1.2rem;
     letter-spacing: 0.5px;
@@ -188,7 +247,7 @@ body {
 }
 
 .entry__link:hover {
-    color: #DB261D;  /* Black on hover */
+    color: #DB261D;  
 }
 
 .entry__page {

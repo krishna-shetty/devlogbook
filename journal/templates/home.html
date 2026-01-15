@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <script src="{% static 'js/main.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="icon" href="{% static 'images/16th-Century-letter-K.ico' %}" type="image/x-icon">
 </head>
 
 <body>
-    <!-- Cover Section - Always takes full viewport height -->
     <div class="cover-section">
         <!-- Scroll Indicators -->
         <!-- <div class="scroll-indicator scroll-indicator--left scroll-indicator--bop">↓</div> -->
@@ -27,8 +27,49 @@
             <div class="cover">
                 <h2 class="cover__subtitle">A</h2>
                 <h1 class="cover__title cover__title--bop">Development Logging Book</h1>
-                <h2 class="cover__tagline">on gamecraft, engineering practices, <br /> and other musings</h2>
-                <div class="cover__location cover__ornament">Los Angeles <br /> 2025</div>
+                <h2 class="cover__tagline">on building systems, making games, </br> and writing things down</h2>
+                <div class="cover__location cover__ornament">Los Angeles <br /> 2026</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-me-section">
+        <div class="about-me">
+            <h2 class="about-me__title">About Me</h2>
+            <p class="about-me__bio">
+                I’m <b>Krishna Shetty</b>, though I go by <b>Kris</b>. I’m a graduate student at the <b>University of Southern California</b>, 
+                pursuing a Master’s in Computer Science. A <i>non-specialized degree</i> on paper, but one I’ve largely shaped around 
+                <b>game development</b>. I previously completed my Bachelor’s in Technology in Computer Science with Honors in Data Science 
+                from K.J. Somaiya College of Engineering, Mumbai.
+                <br />
+                <br />  
+                Coming from a computer science background with a bent toward game development, I’ve been fortunate to build both the foundation of a 
+                designer and the habits of a developer. I’m fixated on software design at all levels, from high-level architecture to the 
+                low-level of systems programming. I firmly believe <b>software should be written to communicate efficaciously with 
+                humans first</b>; machine understanding is a fortunate by-product.
+                <br />
+                <br />
+                My work spans software design across the stack: from custom memory allocators and job systems, to gameplay ability frameworks 
+                with state-driven modifiers, to designer- and developer-facing menu-driven tools that eliminate redundancy and streamline 
+                development workflows. Game development is simply the outlet for my programming. Because games are, quite frankly, <i>the best 
+                thing ever!</i>
+                <br />
+                <br />
+                If learning is a hobby, it’s my favorite one. Then there are games, duh! I love music to the point of snobbery. I enjoy 
+                listening to people talk about things I know nothing about, personal or professional. I walk a lot, read mostly non-fiction 
+                (some fiction), and plan my outfits a day in advance.
+                <br />
+                <br />
+                I’m building my portfolio as a blog, because I document obsessively. It’s meant to be a dive into my reasoning, because <b>code 
+                is excellent at explaining how, but rarely why.</b>
+                <br />
+                <br />
+                If any of this resonates, feel free to reach out. Teach me about software design, games, or any technology that follows a 
+                <i>human-first philosophy.</i>
+            </p>
+            <div class="about-me__footer">
+                <a href="http://bit.ly/4qnqhIJ" target="_blank" rel="noopener noreferrer" class="about-me__link">Résumé</a>
+                <a href="mailto:krishnaharishshetty@gmail.com" class="about-me__link">Contact</a>
             </div>
         </div>
     </div>
@@ -36,7 +77,6 @@
     <!-- Entries Section -->
     <div class="entries">
         <h2 class="entries__title">Entries</h2>
-        <div class="entries__ornament">⸺ ✦✦✦ ⸺</div>
 
         {% for chapter_title, entries in grouped_entries.items %}
         <h3 class="entries__chapter-title">{{ chapter_title }}</h3>
