@@ -10,7 +10,7 @@ class HomeView(ListView):
         context = super().get_context_data(**kwargs)
         chapters = defaultdict(list)
 
-        for entry in self.get_queryset().order_by('-created_at'):
+        for entry in self.get_queryset().order_by('order'):
             chapters[entry.get_chapter_display()].append(entry)
 
         context['grouped_entries'] = dict(chapters)
