@@ -32,16 +32,15 @@ def markdownify(text):
 def embed_youtube(text):
     def replace(match):
         url = match.group(0)  # full URL, unchanged
-        return f"""
-        <iframe
-            width="560"
-            height="315"
-            src="{url}"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
+        return f"""<div class="iframe-container">
+            <iframe
+                src="{url}"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
         """
     return mark_safe(YOUTUBE_EMBED_RE.sub(replace, text))
