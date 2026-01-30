@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Entry(models.Model):
     CHAPTER_CHOICES = [
-        ('nighttongue', 'NightTongue'),
+        ('aftertaste', 'Aftertaste'),
         ('devnotes', 'Dev Notes'),
         ('otherramblings', 'Other Ramblings'),
         ('primeengine', 'Prime Engine'),

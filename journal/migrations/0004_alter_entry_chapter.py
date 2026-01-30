@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='entry',
             name='chapter',
-            field=models.CharField(choices=[('nighttongue', 'NightTongue'), ('devnotes', 'Dev Notes'), ('otherramblings', 'Other Ramblings')], max_length=50),
+            field=models.CharField(choices=[('aftertaste', 'Aftertaste'), ('devnotes', 'Dev Notes'), ('otherramblings', 'Other Ramblings'), ('primeengine', 'Prime Engine')], max_length=50),
         ),
     ]

@@ -15,6 +15,16 @@
     <script src="{% static 'js/main.js' %}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="icon" href="{% static 'images/16th-Century-letter-K.ico' %}" type="image/x-icon">
+    {% if GA_MEASUREMENT_ID and not DEBUG %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_MEASUREMENT_ID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ GA_MEASUREMENT_ID }}');
+    </script>
+    {% endif %}
 </head>
 
 <body>
@@ -68,7 +78,7 @@
                 <i>human-first philosophy.</i>
             </p>
             <div class="about-me__footer">
-                <a href="https://drive.google.com/file/d/1eoEPUIK1IGhKUIYMFBKYu1Py_8t4kIS5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="about-me__link">Résumé</a>
+                <a href="https://drive.google.com/file/d/13vwh_5MIFPpxUPtnEcJI8MsSGEZpYI_1/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="about-me__link">Résumé</a>
                 <a href="mailto:krishnaharishshetty@gmail.com" class="about-me__link">Contact</a>
             </div>
         </div>

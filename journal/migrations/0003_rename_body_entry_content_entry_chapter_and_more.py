@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='entry',
             name='chapter',
-            field=models.CharField(choices=[('nighttongue', 'NightTongue'), ('dev notes', 'Dev Notes'), ('other ramblings', 'Other Ramblings')], default='default content', max_length=50),
+            field=models.CharField(choices=[('aftertaste', 'Aftertaste'), ('dev notes', 'Dev Notes'), ('other ramblings', 'Other Ramblings'), ('primeengine', 'Prime Engine')], default='default content', max_length=50),
             preserve_default=False,
         ),
         migrations.AddField(

@@ -38,6 +38,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8
 # DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
+# Google Analytics measurement id (empty => disabled)
+GA_MEASUREMENT_ID = os.environ.get('GA_MEASUREMENT_ID')
+
 ALLOWED_HOSTS = ['krisshetty.pythonanywhere.com', 'localhost', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://krisshetty.pythonanywhere.com']
 
@@ -77,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'api.context_processors.google_analytics',
             ],
         },
     },
